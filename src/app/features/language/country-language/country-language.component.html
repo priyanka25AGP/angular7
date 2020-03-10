@@ -1,0 +1,13 @@
+<div class="header-title">Language List</div>
+<div class="table-cont">
+    <div class="table-wrp">
+        <div class="table-row">
+          <div class="table-col fw-600">Name</div>
+          <div class="table-col fw-600"> Native Name</div>
+        </div>
+        <div class="table-row"  *ngFor="let language of languageList">
+          <div class="table-col">{{language.name}}</div>
+          <div class="table-col">{{language.nativeName}}</div>
+        </div>       
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div>
+    <div class="side-nav-cont">
+        <ul class="menu">
+            <li class="menu-item" [routerLink]="'//' + countryId" routerLinkActive="router-link-active">Home</li>
+            <li class="menu-item" [routerLink]="'/language/' + countryId" routerLinkActive="router-link-active">Language List</li>
+            <li class="menu-item" [routerLink]="'/currency/' + countryId" routerLinkActive="router-link-active">Currency List</li>
+        </ul>
+    </div>
+    <div class="layout-cont">
+        <div class="header">
+            <div>
+               <div class="country-name">{{selectedCountry}}</div>                         
+                <mat-form-field>   
+                    <mat-select matNativeControl [formControl]="countryControl" required>
+                      <mat-option>--</mat-option>
+                      <mat-option *ngFor="let country of countryList" [value]="country" (click)="countryChange(country)">
+                        {{country.name}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="countryControl.hasError('required')">Please choose a Country</mat-error>
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="main-cont">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

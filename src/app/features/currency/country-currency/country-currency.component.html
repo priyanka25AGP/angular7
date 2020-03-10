@@ -1,0 +1,16 @@
+<div class="header-title">Currency List</div>
+<div class="table-cont">
+    <div class="table-wrp">
+        <div class="table-row">
+          <div class="table-col fw-600">Currency Name</div>
+          <div class="table-col fw-600"> Code</div>
+          <div class="table-col fw-600"> Symbol</div>
+        </div>
+        <div class="table-row"  *ngFor="let currency of currencyList">
+          <div class="table-col">{{currency.name}}</div>
+          <div class="table-col">{{currency.code}}</div>
+          <div class="table-col">{{currency.symbol}}</div>
+          
+        </div>       
+    </div>
+</div>
